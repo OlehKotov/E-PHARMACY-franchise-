@@ -1,0 +1,134 @@
+.form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 210px;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.loginInput {
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  border-radius: 60px;
+  width: 335px;
+  height: 44px;
+  outline: none;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: rgba(29, 30, 33, 0.4);
+  padding: 13px 45px 13px 18px;
+}
+
+.loginInput:active,
+.loginInput:focus {
+  border: 1px solid #59b17a;
+}
+
+.input {
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  top: 45px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #ef2447;
+  margin-left: 10px;
+}
+
+.errorInput {
+  border-color: red;
+}
+
+.passwordToggleIcon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.button {
+  border-radius: 60px;
+  padding: 13px 147px;
+  width: 335px;
+  height: 44px;
+  background: #59b17a;
+  margin-top: 26px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover,
+.button:active {
+  background-color: #3f945f;
+}
+
+.inputText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: black;
+}
+
+@media (min-width: 768px) {
+  .form {
+    margin-top: 50px;
+    margin-bottom: 252px;
+    align-items: start;
+  }
+
+  .loginInput {
+    border: 1px solid rgba(29, 30, 33, 0.1);
+    border-radius: 60px;
+    width: 323px;
+    height: 44px;
+    outline: none;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: rgba(29, 30, 33, 0.4);
+  }
+
+  .button {
+    padding: 13px 141px;
+    width: 323px;
+    height: 44px;
+  }
+
+  .inputText {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: black;
+  }
+}
+
+@media (min-width: 1440px) {
+  .form {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .inputText {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: black;
+  }
+}
