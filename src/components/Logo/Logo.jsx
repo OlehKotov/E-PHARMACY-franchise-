@@ -19,7 +19,8 @@ const Logo = () => {
 
   return (
     <div onClick={handleLogoClick} style={{ cursor: 'pointer' }} className={css.logo}>
-      <img src={logo} alt="App Logo" />
+      <img src={logo} alt="App Logo" className={css.logoImg}/>
+      <p className={css.logoText}>E-Pharmacy</p>
     </div>
   );
 };

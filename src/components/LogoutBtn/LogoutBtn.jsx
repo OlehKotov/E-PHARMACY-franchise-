@@ -13,9 +13,7 @@ const LogoutBtn = () => {
 
   return (
     <button className={css.logout} onClick={handleLogout}>
-      <svg width="13.82" height="13.82">
-        <use xlinkHref={`${sprite}#logout`} />
-      </svg>
+      Log out
     </button>
   );
 };

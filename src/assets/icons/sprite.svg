@@ -17,12 +17,14 @@
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 12" id="Vector">
     <path d="M1 0V12" stroke="#1D1E21" stroke-opacity="0.4"></path>
   </symbol>
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="menu-burger">
-    <path d="M4 8.00134H28M4 16.0013H28M4 24.0013H28" stroke="#1D1E21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 26" id="menu-burger">
+    <path d="M28.3379 13.207H4.33789" stroke="#59B17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M28.3379 8.00684H4.33789" stroke="#59B17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M28.3379 18.4072H4.33789" stroke="#59B17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="x">
-    <path d="M24 8L8 24" stroke="#1D1E21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-    <path d="M8 8L24 24" stroke="#1D1E21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M24 8L8 24" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M8 8L24 24" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" id="ic_round-dashboard">
     <path d="M2.39216 7.57557H5.84671C6.16338 7.57557 6.42247 7.31648 6.42247 6.99981V2.39375C6.42247 2.07708 6.16338 1.81799 5.84671 1.81799H2.39216C2.0755 1.81799 1.81641 2.07708 1.81641 2.39375V6.99981C1.81641 7.31648 2.0755 7.57557 2.39216 7.57557ZM2.39216 12.1816H5.84671C6.16338 12.1816 6.42247 11.9225 6.42247 11.6059V9.30284C6.42247 8.98618 6.16338 8.72709 5.84671 8.72709H2.39216C2.0755 8.72709 1.81641 8.98618 1.81641 9.30284V11.6059C1.81641 11.9225 2.0755 12.1816 2.39216 12.1816ZM8.14974 12.1816H11.6043C11.921 12.1816 12.18 11.9225 12.18 11.6059V6.99981C12.18 6.68315 11.921 6.42405 11.6043 6.42405H8.14974C7.83307 6.42405 7.57398 6.68315 7.57398 6.99981V11.6059C7.57398 11.9225 7.83307 12.1816 8.14974 12.1816ZM7.57398 2.39375V4.69678C7.57398 5.01345 7.83307 5.27254 8.14974 5.27254H11.6043C11.921 5.27254 12.18 5.01345 12.18 4.69678V2.39375C12.18 2.07708 11.921 1.81799 11.6043 1.81799H8.14974C7.83307 1.81799 7.57398 2.07708 7.57398 2.39375Z" fill="currentColor"></path>
@@ -130,6 +132,11 @@
     <path d="M5.33398 1.33398V4.00065" stroke="#59B17A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
     <path d="M2 6.66602H14" stroke="#59B17A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
+</svg>
+
+
+<svg width="0" height="0" class="hidden">
+ 
 </svg>
 
 
