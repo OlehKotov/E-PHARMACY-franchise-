@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 375px;
-  padding: 24px 20px;
+  padding: 0 20px 0 20px;
   background-image: url(./../../assets/images/elements-min.png);
   background-repeat: no-repeat;
   background-position: 100% 100%;
@@ -24,8 +24,8 @@
 }
 
 .textBlock {
-  width: 335px;
-  margin-top: 148px;
+  width: 320px;
+  margin-top: 106px;
   position: relative;
 }
 
@@ -53,7 +53,7 @@
 @media (min-width: 768px) {
   .container {
     width: 768px;
-    padding: 24px 32px;
+    padding: 0px 32px;
     background-image: url(./../../assets/images/elements-min-768.png);
   }
 
@@ -80,7 +80,7 @@
 @media (min-width: 1440px) {
   .container {
     width: 1440px;
-    padding: 28px 100px;
+    padding: 0px 100px;
     background-image: url(./../../assets/images/elements-min-1440.png);
   }
 

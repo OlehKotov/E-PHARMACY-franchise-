@@ -1,20 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import css from "./Header.module.css";
 import Logo from "../Logo/Logo";
-// import Title from "../Title/Title";
-// import SubTitle from "../SubTitle/SubTitle";
-// import { selectUserEmail } from "../../redux/selectors";
-// import { useSelector } from "react-redux";
 import sprite from "../../assets/icons/sprite.svg";
 import LogoutBtn from "../LogoutBtn/LogoutBtn";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/selectors";
 
 const Header = () => {
-  // const email = useSelector(selectUserEmail);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1440);
   const menuRef = useRef(null);
 
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -53,42 +52,9 @@ const Header = () => {
 
   return (
     <header className={css.header}>
-      {/* <Logo />
-
-      <div className={css.navContainer}>
-        <NavLink
-          to="/dashboard"
-          className={({ isActive }) =>
-            isActive ? `${css.menuItem} ${css.active}` : css.menuItem
-          }
-        >
-          Shop
-        </NavLink>
-        <NavLink
-          to="/orders"
-          className={({ isActive }) =>
-            isActive ? `${css.menuItem} ${css.active}` : css.menuItem
-          }
-        >
-          Medicine
-        </NavLink>
-        <NavLink
-          to="/products"
-          className={({ isActive }) =>
-            isActive ? `${css.menuItem} ${css.active}` : css.menuItem
-          }
-        >
-          Statistics
-        </NavLink>
-      </div>
-      <div className={css.logoutBtn}>
-        <LogoutBtn />
-      </div> */}
-
       <div className={css.container}>
-        {isDesktop ? (
-          <div>
-            <Logo />
+      <Logo />
+        {isDesktop &&  isLoggedIn ? (
             <div className={css.navContainer}>
               <NavLink
                 to="/dashboard"
@@ -114,25 +80,19 @@ const Header = () => {
               >
                 Statistics
               </NavLink>
-            </div>
             <div className={css.logoutBtn}>
               <LogoutBtn />
             </div>
           </div>
         ) : (
-          <div>
-              <Logo />
-            <button className={css.burgerButton} onClick={toggleMenu}>
+          isLoggedIn && (
+          <>
+          <button className={css.burgerButton} onClick={toggleMenu}>
             <svg width="32" height="26">
               <use xlinkHref={`${sprite}#menu-burger`} />
             </svg>
           </button>
-          </div>
-          
-        )}
-        {!isDesktop && (
-          <>
-            <div
+          <div
               className={`${css.overlay} ${
                 isMenuOpen ? css.overlayVisible : ""
               }`}
@@ -178,10 +138,11 @@ const Header = () => {
               </div>
             </div>
           </>
-        )}
-      </div>
-    </header>
-  );
-};
+           )
+           )}
+           </div>
+         </header>
+       );
+     };
 
 export default Header;

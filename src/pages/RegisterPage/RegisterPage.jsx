@@ -1,10 +1,11 @@
 import React from "react";
-import css from "./LoginPage.module.css";
+import css from "./RegisterPage.module.css";
 import LoginForm from "./../../components/LoginForm/LoginForm";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 import SharedLayout from "../../components/SharedLayout/SharedLayout";
+import RegisterForm from "../../components/RegisterForm/RegisterForm";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
     <SharedLayout>
       <DocumentTitle>Login page</DocumentTitle>
@@ -17,11 +18,11 @@ const LoginPage = () => {
             </h1>
             <div className={css.textBlockImg}></div>
           </div>
-          <LoginForm />
+          <RegisterForm />
         </div>
       </div>
     </SharedLayout>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

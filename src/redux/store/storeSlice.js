@@ -12,6 +12,7 @@ import {
   updateProduct,
   addNewSupplier,
   updateSupplier,
+  register,
 } from "./storeOps";
 
 const initialState = {
@@ -50,6 +51,12 @@ const storeSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+    .addCase(register.fulfilled, (state, action) => {
+      state.isLoggedIn = true;
+      state.token = action.payload.token;
+      state.isLoading = false;
+      state.isError = false;
+    })
       .addCase(login.fulfilled, (state, action) => {
         state.isLoggedIn = true;
         state.token = action.payload.token;
@@ -135,6 +142,7 @@ const storeSlice = createSlice({
       })
       .addMatcher(
         isAnyOf(
+          register.pending,
           login.pending,
           logout.pending,
           getDashboard.pending,
@@ -155,6 +163,7 @@ const storeSlice = createSlice({
       )
       .addMatcher(
         isAnyOf(
+          register.rejected,
           login.rejected,
           logout.rejected,
           getDashboard.rejected,

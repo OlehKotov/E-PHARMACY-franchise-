@@ -7,6 +7,24 @@ export const instance = axios.create({
   baseURL: "https://admin-dashboard-bd-app.onrender.com/api",
 });
 
+export const register = createAsyncThunk(
+  "store/register",
+  async (userData, { rejectWithValue }) => {
+    try {
+      const { data } = await instance.post("/user/signup", userData);
+      const token = data.data.accessToken;
+      toast.success("Registration successful!");
+      return { userData: data.data, token };
+    } catch (error) {
+      toast.error(
+        "Registration failed: " +
+          (error.response?.data?.message || "Unknown error")
+      );
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
 export const login = createAsyncThunk(
   "store/login",
   async (userData, { rejectWithValue }) => {

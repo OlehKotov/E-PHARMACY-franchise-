@@ -1,14 +1,14 @@
 import { useState } from "react";
-import css from "./LoginForm.module.css";
+import css from "./RegisterForm.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { logInValidationSchema } from "../../validation/logInValidationSchema";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/store/storeOps";
+import { register } from "../../redux/store/storeOps";
 import { NavLink } from "react-router-dom";
+import { registerValidationSchema } from "../../validation/registerValidationSchema";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -22,20 +22,42 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm({
-    resolver: yupResolver(logInValidationSchema),
+    resolver: yupResolver(registerValidationSchema),
     defaultValues: {
+      name: "",
       email: "",
+      phoneNumber: "",
       password: "",
     },
   });
 
   const onSubmit = (data) => {
-    dispatch(login(data));
+    dispatch(register(data));
   };
 
   return (
     <div className={css.containerForm}>
       <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
+      <div className={css.inputWrapper}>
+          <Controller
+            name="name"
+            control={control}
+            render={({ field }) => (
+              <input
+                className={`${css.loginInput} ${css.inputText} ${
+                  errors.name ? css.errorInput : ""
+                }`}
+                type="text"
+                placeholder="User Name"
+                {...field}
+              />
+            )}
+          />
+          {errors.name && (
+            <div className={css.error}>{errors.name.message}</div>
+          )}
+        </div>
+
         <div className={css.inputWrapper}>
           <Controller
             name="email"
@@ -55,6 +77,28 @@ const LoginForm = () => {
             <div className={css.error}>{errors.email.message}</div>
           )}
         </div>
+
+        <div className={css.inputWrapper}>
+          <Controller
+            name="phoneNumber"
+            control={control}
+            render={({ field }) => (
+              <input
+                className={`${css.loginInput} ${css.inputText} ${
+                  errors.phoneNumber ? css.errorInput : ""
+                }`}
+                type="text"
+                placeholder="Phone number"
+                {...field}
+              />
+            )}
+          />
+          {errors.phoneNumber && (
+            <div className={css.error}>{errors.phoneNumber.message}</div>
+          )}
+        </div>
+
+        
 
         <div className={css.inputWrapper}>
           <div className={css.input}>
@@ -92,14 +136,14 @@ const LoginForm = () => {
         </div>
 
         <button type="submit" className={css.button} disabled={isSubmitting}>
-          Log In
+        Register
         </button>
-        <NavLink to="/register" className={css.isLoginText}>
-          Don&apos;t have an account?
+        <NavLink to="/login" className={css.isLoginText}>
+        Already have an account?
         </NavLink>
       </form>
     </div>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;

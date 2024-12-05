@@ -11,6 +11,7 @@ import AllOrdersPage from "../pages/AllOrdersPage/AllOrdersPage";
 import CustomersDataPage from "../pages/CustomersDataPage/CustomersDataPage";
 import AllProductsPage from "../pages/AllProductsPage/AllProductsPage";
 import AllSuppliersPage from "../pages/AllSuppliersPage/AllSuppliersPage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
 
 function App() {
   return (
@@ -21,6 +22,14 @@ function App() {
           element={
             <RestrictedRoute>
               <LoginPage />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute>
+              <RegisterPage />
             </RestrictedRoute>
           }
         />
