@@ -10,11 +10,11 @@ export const instance = axios.create({
 export const register = createAsyncThunk(
   "store/register",
   async (userData, { rejectWithValue }) => {
-    try {
-      const { data } = await instance.post("/user/signup", userData);
-      const token = data.data.accessToken;
+    try {   
+      const { data } = await instance.post("/user/register", userData);
       toast.success("Registration successful!");
-      return { userData: data.data, token };
+      
+      return data.data;
     } catch (error) {
       toast.error(
         "Registration failed: " +

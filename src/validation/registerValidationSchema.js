@@ -12,7 +12,7 @@ export const registerValidationSchema = yup.object().shape({
       "Invalid email format"
     )
     .required("Email is required"),
-  phoneNumber: yup
+  phone: yup
     .string()
     .matches(
       /^\+380\d{9}$/,

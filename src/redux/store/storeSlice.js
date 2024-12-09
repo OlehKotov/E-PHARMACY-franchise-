@@ -53,12 +53,14 @@ const storeSlice = createSlice({
     builder
     .addCase(register.fulfilled, (state, action) => {
       state.isLoggedIn = true;
-      state.token = action.payload.token;
+      state.dashboard.user = action.payload.user;
+      state.token = action.payload.accessToken;
       state.isLoading = false;
       state.isError = false;
     })
       .addCase(login.fulfilled, (state, action) => {
         state.isLoggedIn = true;
+        state.dashboard.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoading = false;
         state.isError = false;

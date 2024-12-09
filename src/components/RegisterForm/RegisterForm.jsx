@@ -26,7 +26,7 @@ const RegisterForm = () => {
     defaultValues: {
       name: "",
       email: "",
-      phoneNumber: "",
+      phone: "",
       password: "",
     },
   });
@@ -38,7 +38,8 @@ const RegisterForm = () => {
   return (
     <div className={css.containerForm}>
       <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <div className={css.inputWrapper}>
+        <div className={css.inputContainer}>
+        <div className={css.inputWrapper}>
           <Controller
             name="name"
             control={control}
@@ -80,7 +81,7 @@ const RegisterForm = () => {
 
         <div className={css.inputWrapper}>
           <Controller
-            name="phoneNumber"
+            name="phone"
             control={control}
             render={({ field }) => (
               <input
@@ -93,12 +94,10 @@ const RegisterForm = () => {
               />
             )}
           />
-          {errors.phoneNumber && (
-            <div className={css.error}>{errors.phoneNumber.message}</div>
+          {errors.phone && (
+            <div className={css.error}>{errors.phone.message}</div>
           )}
         </div>
-
-        
 
         <div className={css.inputWrapper}>
           <div className={css.input}>
@@ -134,6 +133,9 @@ const RegisterForm = () => {
             <div className={css.error}>{errors.password.message}</div>
           )}
         </div>
+
+        </div>
+      
 
         <button type="submit" className={css.button} disabled={isSubmitting}>
         Register
