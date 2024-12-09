@@ -6,7 +6,7 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../components/RestrictedRoute/RestrictedRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Dashboard from "../pages/Dashboard/Dashboard";
+import Dashboard from "../pages/CreateShopPage/CreateShopPage";
 import AllOrdersPage from "../pages/AllOrdersPage/AllOrdersPage";
 import CustomersDataPage from "../pages/CustomersDataPage/CustomersDataPage";
 import AllProductsPage from "../pages/AllProductsPage/AllProductsPage";
@@ -34,7 +34,7 @@ function App() {
           }
         />
         <Route
-          path="/dashboard"
+          path="/create-shop"
           element={
             <PrivateRoute>
               <Dashboard />
