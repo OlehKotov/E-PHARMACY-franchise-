@@ -132,12 +132,15 @@
     <path d="M5.33398 1.33398V4.00065" stroke="#59B17A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
     <path d="M2 6.66602H14" stroke="#59B17A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="radioActive">
+    <rect x="1" y="1" width="16" height="16" rx="8" stroke="#59B17A" stroke-width="2"></rect>
+    <rect x="4" y="4" width="10" height="10" rx="5" fill="#59B17A"></rect>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="radioNotActive">
+    <rect x="2" y="2" width="16" height="16" rx="8" stroke="#121417" stroke-opacity="0.2" stroke-width="2"></rect>
+  </symbol>
 </svg>
 
-
-<svg width="0" height="0" class="hidden">
- 
-</svg>
 
 
 

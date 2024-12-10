@@ -9,9 +9,9 @@ export const instance = axios.create({
 
 export const register = createAsyncThunk(
   "store/register",
-  async (userData, { rejectWithValue }) => {
+  async (user, { rejectWithValue }) => {
     try {   
-      const { data } = await instance.post("/user/register", userData);
+      const { data } = await instance.post("/user/register", user);
       toast.success("Registration successful!");
       
       return data.data;
@@ -27,12 +27,11 @@ export const register = createAsyncThunk(
 
 export const login = createAsyncThunk(
   "store/login",
-  async (userData, { rejectWithValue }) => {
+  async (user, { rejectWithValue }) => {
     try {
-      const { data } = await instance.post("/user/login", userData);
-      const token = data.data.accessToken;
+      const { data } = await instance.post("/user/login", user);
       toast.success("Login successful!");
-      return { userData: data.data, token };
+      return data.data;
     } catch (error) {
       toast.error(
         "Login failed: " + (error.response?.data?.message || "Unknown error")
@@ -71,6 +70,83 @@ export const logout = createAsyncThunk(
     }
   }
 );
+
+export const getUserInfo = createAsyncThunk(
+  "store/dashboard/userInfo",
+  async (_, { getState, rejectWithValue }) => {
+    const state = getState();
+    const token = state.store.token;
+
+    if (!token) {
+      return rejectWithValue("No token found");
+    }
+
+    try {
+      const { data } = await instance.get("/user/user-info", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return data.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || error.message);
+    }
+  }
+);
+
+export const createShop = createAsyncThunk(
+  "store/createShop",
+  async (shop, { getState, rejectWithValue }) => {
+    const state = getState();
+    const token = state.store.token;
+
+    if (!token) {
+      return rejectWithValue("No token found");
+    }
+    try {   
+      const { data } = await instance.post("/shop/create", shop, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      toast.success("Shop creation was successful!");
+      return data.data;
+    } catch (error) {
+      toast.error(
+        "Registration failed: " +
+          (error.response?.data?.message || "Unknown error")
+      );
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const getDashboard = createAsyncThunk(
   "store/dashboard",

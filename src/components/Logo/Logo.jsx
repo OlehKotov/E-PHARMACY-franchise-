@@ -1,17 +1,19 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import logo from './../../assets/images/logo.png'
+import whiteLogo from './../../assets/images/whiteLogo.png'
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/selectors';
 import css from "./Logo.module.css";
+import clsx from 'clsx';
 
-const Logo = () => {
+const Logo = ({ isFooter }) => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const handleLogoClick = () => {
     if (isLoggedIn) {
-      navigate('/dashboard'); 
+      navigate('/'); 
     } else {
       navigate('/login'); 
     }
@@ -19,8 +21,8 @@ const Logo = () => {
 
   return (
     <div onClick={handleLogoClick} style={{ cursor: 'pointer' }} className={css.logo}>
-      <img src={logo} alt="App Logo" className={css.logoImg}/>
-      <p className={css.logoText}>E-Pharmacy</p>
+      <img src={isFooter ? whiteLogo : logo} alt="App Logo" className={css.logoImg}/>
+      <p className={clsx(css.logoText, { [css.footerLogoText]: isFooter })}>E-Pharmacy</p>
     </div>
   );
 };

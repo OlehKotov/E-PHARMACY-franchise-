@@ -10,6 +10,12 @@
   .inputWrapper {
     position: relative;
   }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
   
   .loginInput {
     border: 1px solid rgba(29, 30, 33, 0.1);

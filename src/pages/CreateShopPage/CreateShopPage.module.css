@@ -3,6 +3,20 @@
   margin: 0 auto;
 }
 
+.mainContainer {
+  padding: 64px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image {
+  width: 335px;
+  height: 470px;
+  background-image: url(../../assets/images/createShopImage.png);
+  background-size: cover;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 768px;

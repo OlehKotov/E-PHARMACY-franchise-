@@ -1,14 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SharedLayout from "../../components/SharedLayout/SharedLayout";
 import css from "./CreateShopPage.module.css";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
-import Statistics from "../../components/Statistics/Statistics";
-import RecentCustomers from "../../components/RecentCustomers/RecentCustomers";
-import { useDispatch, useSelector } from "react-redux";
-import IncomeExpenses from "../../components/IncomeExpenses/IncomeExpenses";
-import { getDashboard } from "../../redux/store/storeOps";
-import { selectIsLoading } from "../../redux/selectors";
-import Loader from "../../components/Loader/Loader";
+import CreateShop from "../../components/CreateShop/CreateShop";
 
 const CreateShopPage = () => {
   // const loading = useSelector(selectIsLoading);
@@ -35,8 +29,8 @@ const CreateShopPage = () => {
       <div className={css.container}>
         <DocumentTitle>Create Shop</DocumentTitle>
         <main className={css.mainContainer}>
-
-         
+          <CreateShop />
+          <div className={css.image}></div>
         </main>
       </div>
     </SharedLayout>
