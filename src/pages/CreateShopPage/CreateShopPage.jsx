@@ -5,24 +5,6 @@ import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 import CreateShop from "../../components/CreateShop/CreateShop";
 
 const CreateShopPage = () => {
-  // const loading = useSelector(selectIsLoading);
-  // const dispatch = useDispatch();
-  // const pageTitle = "Dashboard";
-
-  // useEffect(() => {
-  //   dispatch(getDashboard());
-  // }, [dispatch]);
-
-  // if (loading) {
-  //   return (
-  //     <SharedLayout page={pageTitle}>
-  //     <div className={css.container}>
-  //       <DocumentTitle>Dashboard</DocumentTitle>
-  //       <Loader />
-  //     </div>
-  //   </SharedLayout>
-  //   );
-  // }
 
   return (
     <SharedLayout>

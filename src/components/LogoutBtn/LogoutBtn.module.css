@@ -34,6 +34,21 @@
 
 @media (min-width: 1440px) {
   .logout {
-    margin-left: 979px;
+    margin-left: 0;
+    border: 1px solid rgba(89, 177, 122, 0.5);
+    border-radius: 60px;
+    padding: 15px 15px;
+    width: 115px;
+    height: 44px;
+    color: #59b17a;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .logout:hover,
+  .logout:active,
+  .logout:focus {
+    background-color: #59b17a;
+    color: #fff;
   }
 }

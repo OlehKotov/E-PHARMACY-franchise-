@@ -81,11 +81,11 @@
 }
 
 .inputText {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-    color: black;
-  }
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: black;
+}
 
 .error {
   position: absolute;
@@ -157,3 +157,63 @@
 .button:focus {
   background-color: #3f945f;
 }
+
+@media (min-width: 768px) {
+  .createShopContainer {
+    width: 704px;
+    height: auto;
+    padding: 40px 38px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 114%;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 125%;
+    margin-top: 14px;
+    width: 427px;
+  }
+
+  .inputContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  /* .inputWrapperRadio {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 8px;
+  } */
+  .inputWrapperRadio,
+  .button {
+    grid-column: 1 / -1; 
+  }
+
+  .label {
+    padding-left: 16px;
+  }
+
+  .input {
+    width: 200px;
+  }
+
+  .radioWrapper label {
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .button {
+    padding: 13px 32px;
+    width: 167px;
+
+    background-color: #59b17a;
+    padding: 13px 26px;
+    margin-top: 24px;
+  }
+}
+

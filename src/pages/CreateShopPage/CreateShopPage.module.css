@@ -21,6 +21,17 @@
   .container {
     width: 768px;
   }
+
+  .mainContainer {
+    padding: 80px 32px 120px 32px;
+  }
+  
+  .image {
+    width: 704px;
+    height: 550px;
+    background-image: url(../../assets/images/createShopImage-768.png);
+    background-size: cover;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -31,8 +42,17 @@
 
   .mainContainer {
     display: flex;
-    padding: 0 40px 40px 40px;
+    flex-direction: row;
+    padding: 0 128px 100px 128px;
     gap: 20px;
     background-color: #f7f8fa;
+    margin-top: 64px;
+  }
+
+  .image {
+    width: 456px;
+    height: 624px;
+    background-image: url(../../assets/images/createShopImage-1440.png);
+    background-size: cover;
   }
 }

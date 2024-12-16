@@ -17,7 +17,9 @@
 
 .footer {
   grid-area: footer;
+  
 }
+
 
 @media (min-width: 768px) {
   .sharedLayoutContainer {

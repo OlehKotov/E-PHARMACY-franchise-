@@ -7,6 +7,8 @@ import { selectIsLoggedIn } from "../../redux/selectors";
 
 const SharedLayout = ({ children }) => {
   const isLogin = useSelector(selectIsLoggedIn)
+
+  
   return (
     <div className={css.sharedLayoutContainer}>
       <div className={css.header}>

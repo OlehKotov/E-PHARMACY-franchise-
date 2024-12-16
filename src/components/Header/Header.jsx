@@ -56,6 +56,7 @@ const Header = () => {
       <Logo />
         {isDesktop &&  isLoggedIn ? (
             <div className={css.navContainer}>
+              <div className={css.menuContent}>
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
@@ -80,6 +81,8 @@ const Header = () => {
               >
                 Statistics
               </NavLink>
+              </div>
+              
             <div className={css.logoutBtn}>
               <LogoutBtn />
             </div>
