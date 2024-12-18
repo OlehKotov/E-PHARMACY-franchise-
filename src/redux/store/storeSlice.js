@@ -42,6 +42,7 @@ const initialState = {
     zip: null,
     delivery: null,
   },
+  hasShop: false,
   orders: [],
   customers: [],
   products: [],
@@ -82,6 +83,7 @@ const storeSlice = createSlice({
         state.dashboard.user = action.payload;
       })
       .addCase(createShop.fulfilled, (state, action) => {
+        state.hasShop = true;
         state.shop = action.payload;
         state.isLoading = false;
         state.isError = false;

@@ -7,6 +7,7 @@ export const selectIsLoggedIn = (state) => state.store.isLoggedIn;
 export const selectIsLoading = (state) => state.store.isLoading;
 export const selectIsError = (state) => state.store.isError;
 export const selectDashboard = (state) => state.store.dashboard;
+export const selectHasShop = (state) => state.store.hasShop;
 
 export const selectOrders = createSelector(
   [

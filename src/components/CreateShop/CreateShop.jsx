@@ -38,7 +38,6 @@ const CreateShop = () => {
   }, [userEmail, setValue]);
 
   const onSubmit = (data) => {
-    console.log(data);
     
     dispatch(createShop(data))
     

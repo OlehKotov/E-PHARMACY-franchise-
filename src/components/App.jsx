@@ -6,12 +6,13 @@ import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "../components/RestrictedRoute/RestrictedRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Dashboard from "../pages/CreateShopPage/CreateShopPage";
-import AllOrdersPage from "../pages/AllOrdersPage/AllOrdersPage";
-import CustomersDataPage from "../pages/CustomersDataPage/CustomersDataPage";
-import AllProductsPage from "../pages/AllProductsPage/AllProductsPage";
-import AllSuppliersPage from "../pages/AllSuppliersPage/AllSuppliersPage";
+// import AllOrdersPage from "../pages/AllOrdersPage/AllOrdersPage";
+// import CustomersDataPage from "../pages/CustomersDataPage/CustomersDataPage";
+// import AllProductsPage from "../pages/AllProductsPage/AllProductsPage";
+// import AllSuppliersPage from "../pages/AllSuppliersPage/AllSuppliersPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import CreateShopPage from "../pages/CreateShopPage/CreateShopPage";
+import ShopPage from "../pages/ShopPage/ShopPage";
 
 function App() {
   return (
@@ -37,11 +38,19 @@ function App() {
           path="/create-shop"
           element={
             <PrivateRoute>
-              <Dashboard />
+              <CreateShopPage />
             </PrivateRoute>
           }
         />
         <Route
+          path="/shop"
+          element={
+            <PrivateRoute>
+              <ShopPage />
+            </PrivateRoute>
+          }
+        />
+        {/* <Route
           path="/orders"
           element={
             <PrivateRoute>
@@ -72,7 +81,7 @@ function App() {
               <AllSuppliersPage />
             </PrivateRoute>
           }
-        />
+        /> */}
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

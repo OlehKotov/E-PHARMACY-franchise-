@@ -87,6 +87,7 @@ export const getUserInfo = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       });
+      toast.success("Store creation completed successfully!");
       return data.data;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || error.message);
